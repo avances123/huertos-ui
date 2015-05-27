@@ -1,0 +1,11 @@
+div(data-ng-controller="ToolbarCtrl",data-ng-include="'toolbar/toolbar.tpl.html'")
+
+section(layout="row",flex)
+    div(data-ng-controller="LeftnavCtrl",data-ng-include="'leftnav/leftnav.tpl.html'")
+
+    md-content(flex,layout="row")
+        md-card(flex)
+            md-card-content Hola1
+        md-card(flex)
+            md-card-content Hola2
+
