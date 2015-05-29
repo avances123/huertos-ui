@@ -4,8 +4,10 @@
   "scripts": {
     "test": "gulp test"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
+    "gulp-ng-config": "^1.2.1",
     "browser-sync": "^2.2.3",
     "coffee-script": "^1.7.1",
     "del": "^1.1.1",

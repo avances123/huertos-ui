@@ -4,7 +4,8 @@ var _ = require('underscore.string')
   , fs = require('fs')
   , path = require('path')
 
-  , bowerDir = JSON.parse(fs.readFileSync('.bowerrc')).directory + path.sep;
+  , bowerDir = JSON.parse(fs.readFileSync('.bowerrc')).directory + path.sep
+  , gulpNgConfig = require('gulp-ng-config');
 
 module.exports = function (gulp, $, config) {
   var isProd = $.yargs.argv.stage === 'prod';
@@ -89,8 +90,24 @@ module.exports = function (gulp, $, config) {
       .pipe(gulp.dest(config.buildCss));
   });
 
+
+
+gulp.task('environment', function () {
+  var env = "local";
+  if (isProd){
+  	env = "production";
+  }
+
+  //console.log(process.cwd(),env);
+  return gulp.src('environments.json')
+  .pipe(gulpNgConfig('huertos.config',{
+	environment: env
+  }))
+  .pipe(gulp.dest('app/js'));
+}); 
+
   // compile scripts and copy into build directory
-  gulp.task('scripts', ['clean', 'analyze', 'markup'], function () {
+  gulp.task('scripts', ['clean', 'analyze', 'markup','environment'], function () {
     var typescriptFilter = $.filter('**/*.ts')
       , coffeeFilter = $.filter('**/*.coffee')
       , es6Filter = $.filter('**/*.es6')
@@ -101,7 +118,7 @@ module.exports = function (gulp, $, config) {
       config.appScriptFiles,
       config.buildDir + '**/*.html',
       '!**/*_test.*',
-      '!**/index.html'
+      '!**/index.html',
     ])
       .pipe($.sourcemaps.init())
       .pipe(es6Filter)
@@ -110,6 +127,8 @@ module.exports = function (gulp, $, config) {
         filePath.extname = '.js';
       }))
       .pipe(es6Filter.restore())
+    
+
       .pipe(typescriptFilter)
       .pipe($.typescript(config.tsProject))
       .pipe(typescriptFilter.restore())
@@ -137,7 +156,8 @@ module.exports = function (gulp, $, config) {
   // inject custom CSS and JavaScript into index.html
   gulp.task('inject', ['markup', 'styles', 'scripts'], function () {
     var jsFilter = $.filter('**/*.js');
-
+	//process = require('process');
+	//console.log(process.cwd());
     return gulp.src(config.buildDir + 'index.html')
       .pipe($.inject(gulp.src([
           config.buildCss + '**/*',

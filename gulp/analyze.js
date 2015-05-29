@@ -9,7 +9,8 @@ module.exports = function (gulp, $, config) {
     return gulp.src([
       config.appScriptFiles,
       config.e2eFiles,
-      config.unitTestFiles
+      config.unitTestFiles,
+      '!app/js/environments.js'
     ])
       .pipe($.plumber({errorHandler: function (err) {
         $.notify.onError({
