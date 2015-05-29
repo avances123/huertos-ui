@@ -100,7 +100,7 @@ gulp.task('environment', function () {
 
   //console.log(process.cwd(),env);
   return gulp.src('environments.json')
-  .pipe(gulpNgConfig('huertos.config',{
+  .pipe(gulpNgConfig('env-config',{
 	environment: env
   }))
   .pipe(gulp.dest('app/js'));
@@ -146,7 +146,7 @@ gulp.task('environment', function () {
       .pipe($.if(isProd, $.angularFilesort()))
       .pipe($.if(isProd, $.concat('app.js')))
       .pipe($.if(isProd, $.ngAnnotate()))
-      .pipe($.if(isProd, $.uglify()))
+//      .pipe($.if(isProd, $.uglify()))
       .pipe($.if(isProd, $.rev()))
       .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest(config.buildJs))

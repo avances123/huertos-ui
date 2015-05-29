@@ -1,2 +1,2 @@
-angular.module('huertos.config', [])
-.constant("EnvironmentConfig", {"api":"http://localhost:8000/api"});
+angular.module('env-config', [])
+.constant("EnvironmentConfig", {"api":"http://localhost:8000/"});

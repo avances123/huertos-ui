@@ -1,12 +1,12 @@
 {
   "local": {
     "EnvironmentConfig": {
-      "api": "http://localhost:8000/api"
+      "api": "http://localhost:8000/"
     }
   },
   "production": {
     "EnvironmentConfig": {
-      "api": "https://huertos.herokuapp.com/api"
+      "api": "https://huertos.herokuapp.com/"
     }
   }
 

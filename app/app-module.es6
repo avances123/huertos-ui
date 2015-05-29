@@ -13,7 +13,7 @@
       'ui.router',
       'angular-storage',
       'angular-jwt',
-
+      'env-config',
       'home',
       'toolbar',
       'login',
