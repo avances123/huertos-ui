@@ -9,12 +9,22 @@
 
     login(username,password){
       var data = {'username':username,'password':password};
-      return this.$http.post(this.env_config.api + "auth/login/",data);
+      return this.$http({
+        url: this.env_config.api + "auth/login/",
+        method: 'POST',
+        data: data,
+        skipAuthorization: true
+      });
     }
 
     register(username,password,email){
       var data = {'username':username,'password':password,'email':email};
-      return this.$http.post(this.env_config.api + "auth/register/", data);
+      return this.$http({
+        url: this.env_config.api + "auth/register/",
+        method: 'POST',
+        data: data,
+        skipAuthorization: true
+      })
     }
   }
 

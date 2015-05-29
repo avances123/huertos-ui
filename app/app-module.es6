@@ -52,8 +52,8 @@
       $httpProvider.interceptors.push('jwtInterceptor');
     };
 
-    function config_restangular (RestangularProvider) {
-      RestangularProvider.setBaseUrl('http://localhost:8000/api');
+    function config_restangular (RestangularProvider,EnvironmentConfig) {
+      RestangularProvider.setBaseUrl(EnvironmentConfig.api + 'api');
     };
 
     function run ($rootScope, $state, store, jwtHelper) {
