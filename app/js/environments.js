@@ -1,2 +1,2 @@
 angular.module('env-config', [])
-.constant("EnvironmentConfig", {"api":"https://huertos.herokuapp.com/"});
+.constant('EnvironmentConfig', {"api":"http://localhost:8000/"});

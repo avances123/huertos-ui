@@ -2,9 +2,13 @@
   'use strict';
 
   class HomeCtrl {
-    constructor() {
+    constructor(Restangular) {
       let vm = this;
+      vm.rest = Restangular;
       vm.ctrlName = 'HomeCtrl';
+
+      // REST OBJECTS
+      vm.actions = vm.rest.all('actions').getList().$object;
     }
   }
 

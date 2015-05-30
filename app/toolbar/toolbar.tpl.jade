@@ -3,4 +3,7 @@ md-toolbar(md-scroll-shrink)
 		md-button.md-icon-button(aria-label="menu")
 			i(class=['fa fa-bars fa-lg'])
 		h3
-			span Titulo
+			a(ui-sref="home") Titulo
+		span(flex)
+		md-button.md-icon-button(aria-label="login",ui-sref="login")
+			i(class=['fa fa-user fa-lg'])
