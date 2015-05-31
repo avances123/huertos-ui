@@ -16,7 +16,7 @@
       this.service.login(this.user.username,this.user.password).success((data, status, headers) => {
         console.log("Guardando token:",data);
         this.store.set('jwt', data.token);
-        this.$state.go('me');
+        this.$state.go('home');
       });
     }
 

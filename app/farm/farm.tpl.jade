@@ -1,16 +1,20 @@
 doctype html
 
-md-card(flex)
-  md-card-content
+md-card(flex,layout-padding)
+    
+  div(layout="row",layout-align="end center",flex)
+    h1(flex) Mi huerto
+    md-button.md-fab.md-mini.md-hue-3(aria-label="New Zone",data-ng-click="farm.new_zone()")
+      i(class=['fa fa-plus'])
+    md-button.md-fab.md-mini.md-primary(aria-label="New Zone",data-ng-click="farm.save()")
+      i(class=['fa fa-save'])
+  md-card-content.md-whiteframe-z3
     div(data-gridster="farm.gridster_opts",layout,layout-align="end start")
       ul
         li(data-gridster-item="farm.gridster_custom_map",data-ng-repeat="item in farm.farm.zone_set")
           md-whiteframe.md-whiteframe-z1(layout,layout-fill)
             span kk
 
-      md-button.md-fab.md-mini.md-hue-3(aria-label="New Zone",data-ng-click="farm.new_zone()")
-        i(class=['fa fa-plus'])
-      md-button.md-fab.md-mini.md-primary(aria-label="New Zone",data-ng-click="farm.save()")
-        i(class=['fa fa-save'])
+      
             
         
