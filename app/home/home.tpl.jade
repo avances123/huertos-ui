@@ -1,21 +1,13 @@
-div(data-ng-controller="ToolbarCtrl",data-ng-include="'toolbar/toolbar.tpl.html'")
-
-section(layout="row")
-
-    md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id="left",md-is-locked-open="$mdMedia('gt-md')")
-        md-content()
-            p hola
-
-    md-content(flex)
-        md-card
-            md-card-content 
-                md-subheader ultimas acciones
-                md-list
-                    md-list-item(ng-repeat="action in home.actions")
-                        span 
-                            i(class=['fa fa-save'])
-                        p 
-                            {{ action.actor }} {{action.verb}} 
-                            a(ui-sref="farm({farmId:action.action_object.id})") {{action.action_object.name}}
-                        md-divider
+md-content(flex)
+    md-card
+        md-card-content 
+            md-subheader ultimas acciones
+            md-list
+                md-list-item(ng-repeat="action in home.actions")
+                    span 
+                        i(class=['fa fa-save'])
+                    p 
+                        {{ action.actor }} {{action.verb}} 
+                        a(ui-sref="farm({farmId:action.action_object.id})") {{action.action_object.name}}
+                    md-divider
 

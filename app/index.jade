@@ -13,7 +13,11 @@ html(lang='en' data-ng-app='huertos')
     |<!-- endinject -->
   body
 
-    div(data-ui-view)
+    div(data-ng-controller="ToolbarCtrl as toolbar",data-ng-include="'toolbar/toolbar.tpl.html'")
+
+    section(layout="row")
+      div(data-ng-controller="LeftnavCtrl as leftnav",data-ng-include="'leftnav/leftnav.tpl.html'")
+      div(data-ui-view,flex)
 
     |<!-- bower:js -->
     |<!-- endbower -->

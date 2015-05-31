@@ -1,8 +1,4 @@
-md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-md')")
-  md-content(layout-padding)
-    md-button.md-primary
-      | Close Sidenav Left
-    p(hide-md='', show-gt-md='')
-      | This sidenav is locked open on your device. To go back to the default behavior,
-      | narrow your display.
+md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id="left",md-is-locked-open="$mdMedia('gt-md')")
+    md-content()
+        p {{ leftnav.ctrlName }}
 
