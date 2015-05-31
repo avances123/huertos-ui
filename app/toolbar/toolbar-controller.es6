@@ -2,9 +2,14 @@
   'use strict';
 
   class ToolbarCtrl {
-    constructor() {
+    constructor($mdSidenav) {
       let vm = this;
       vm.ctrlName = 'ToolbarCtrl';
+      vm.sidenav = $mdSidenav;
+    }
+
+    open_leftnav(){
+      this.sidenav('left').toggle();
     }
   }
 

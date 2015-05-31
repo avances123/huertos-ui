@@ -2,9 +2,14 @@
   'use strict';
 
   class LeftnavCtrl {
-    constructor() {
+    constructor($mdSidenav) {
       let vm = this;
       vm.ctrlName = 'LeftnavCtrl';
+      vm.sidenav = $mdSidenav;
+    }
+
+    close(){
+      this.sidenav('left').close();
     }
   }
 

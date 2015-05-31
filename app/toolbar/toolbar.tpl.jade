@@ -1,6 +1,6 @@
 md-toolbar(md-scroll-shrink)
 	div.md-toolbar-tools
-		md-button.md-icon-button(aria-label="menu")
+		md-button.md-icon-button(aria-label="menu",hide-gt-md,ng-click="toolbar.open_leftnav()")
 			i(class=['fa fa-bars fa-lg'])
 		h3
 			a(ui-sref="home") {{ toolbar.ctrlName }}
