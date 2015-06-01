@@ -14,14 +14,14 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id="left",md-is-locked-
         md-list
             md-list-item
                 md-button.md-raised(flex) nuevo huerto
-            md-list-item
+            md-list-item(data-ng-repeat="farm in leftnav.myfarms")
                 div.md-list-item-text(flex,layout="row",layout-align="end center")
-                    a(ui-sref="farm({farmId:3})",flex) jfdsiojfos
+                    a(ui-sref="farm({farmId:farm.id})",flex) {{ farm.name }}
                     i(class=['fa fa-check'])
         md-divider
         md-subheader Huertos siguiendo
         md-list
-            md-list-item
+            md-list-item(data-ng-repeat="farm in leftnav.farms_following")
                 div.md-list-item-text(flex,layout="row",layout-align="end center")
-                    a(ui-sref="farm({farmId:3})",flex) otro huerto
+                    a(ui-sref="farm({farmId:farm.id})",flex) {{ farm.name }}
                     i(class=['fa fa-times-circle'])

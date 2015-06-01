@@ -2,10 +2,15 @@
   'use strict';
 
   class LeftnavCtrl {
-    constructor($mdSidenav) {
+    constructor($mdSidenav,Restangular) {
       let vm = this;
       vm.ctrlName = 'LeftnavCtrl';
       vm.sidenav = $mdSidenav;
+      vm.rest = Restangular;
+
+      // Mis huertos
+      vm.myfarms = vm.rest.all('farms').getList({owner: 'admin'}).$object;
+      vm.farms_following = vm.rest.all('farms').all('following').getList().$object;
     }
 
     close(){
