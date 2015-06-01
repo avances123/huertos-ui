@@ -13,7 +13,7 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id="left",md-is-locked-
         md-subheader Mis huertos
         md-list
             md-list-item
-                md-button.md-raised(flex) nuevo huerto
+                md-button.md-raised(flex,data-ng-click="leftnav.new_farm()") nuevo huerto
             md-list-item(data-ng-repeat="farm in leftnav.myfarms")
                 div.md-list-item-text(flex,layout="row",layout-align="end center")
                     a(ui-sref="farm({farmId:farm.id})",flex) {{ farm.name }}
