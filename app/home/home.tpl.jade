@@ -6,7 +6,7 @@ md-content(flex)
                 md-list-item(ng-repeat="action in home.actions")
                     i(class=['fa fa-save action-icon'])
                     div.md-list-item-text
-                        {{ action.actor }} {{action.verb}} 
+                        | {{ action.actor }} {{action.verb}} 
                         a(ui-sref="farm({farmId:action.action_object.id})") {{action.action_object.name}}
                     md-divider
 
