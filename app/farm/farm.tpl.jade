@@ -3,7 +3,7 @@ doctype html
 md-card(flex,layout-padding)
     
   div(layout="row",layout-align="end center",flex)
-    h1(flex) {{ farm.name }}
+    h1(flex) {{ farm.farm.name }}
     md-button.md-fab.md-mini.md-hue-3(aria-label="New Zone",data-ng-click="farm.new_zone()")
       i(class=['fa fa-plus'])
     md-button.md-fab.md-mini.md-primary(aria-label="New Zone",data-ng-click="farm.save()")
