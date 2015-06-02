@@ -8,7 +8,7 @@
       vm.ctrlName = 'HomeCtrl';
 
       // REST OBJECTS
-      vm.actions = vm.rest.all('actions').getList().$object;
+      vm.actions = vm.rest.all('actions-farm-all').getList().$object;
     }
   }
 
