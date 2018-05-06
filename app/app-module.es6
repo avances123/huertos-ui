@@ -17,7 +17,6 @@
       'home',
       'toolbar',
       'login',
-      'me',
       'farm',
       'leftnav'
     ])
