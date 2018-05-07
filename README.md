@@ -1,20 +1,27 @@
-# huertos
+# HuertosUi
 
-*Generated with [ng-poly](https://github.com/dustinspecker/generator-ng-poly/tree/v0.8.5) version 0.8.5*
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
-## Setup
-1. Install [Node.js](http://nodejs.org/)
- - This will also install npm.
-1. Run `npm install -g bower gulp yo generator-ng-poly@0.8.5`
- - This enables Bower, Gulp, and Yeoman generators to be used from command line.
-1. Run `npm install` to install this project's dependencies
-1. Run `bower install` to install client-side dependencies
-1. Use [generator-ng-poly](https://github.com/dustinspecker/generator-ng-poly) to create additional components
+## Development server
 
-## Gulp tasks
-- Run `gulp build` to compile assets
-- Run `gulp dev` to run the build task and setup the development environment
-- Run `gulp unitTest` to run unit tests via Karma and to create code coverage reports
-- Run `gulp webdriverUpdate` to download Selenium server standalone and Chrome driver for e2e testing
-- Run `gulp e2eTest` to run e2e tests via Protractor
- - **A localhost must be running** - `gulp dev`
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
