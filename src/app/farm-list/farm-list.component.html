@@ -1,6 +1,6 @@
 <h2>Lista de huertos</h2>
 <ul class="farms">
   <li *ngFor="let farm of farms">
-    <span class="badge">{{farm.id}}</span> {{farm.name}}
+    <a routerLink="/farm/{{farm.id}}">{{farm.name}}</a> 
   </li>
 </ul>
