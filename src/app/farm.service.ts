@@ -13,12 +13,16 @@ import { environment } from '../environments/environment';
 })
 export class FarmService {
 
-  private farmsUrl = environment.API_URL+'/api/farms';  // URL to web api  
+  private farmsUrl = environment.API_URL + '/api/farms';
 
   constructor(private http: HttpClient) { }
 
   getFarms(): Observable<Farm[]>{
     //return of(FARMS);
     return this.http.get<Farm[]>(this.farmsUrl)
+  }
+
+  getFarm(id: Number): Observable<Farm>{
+    return this.http.get<Farm>(this.farmsUrl + '/' + id)
   }
 }
