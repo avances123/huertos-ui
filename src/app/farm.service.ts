@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Farm } from './farm';
-import { FARMS } from './mock-farms';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';

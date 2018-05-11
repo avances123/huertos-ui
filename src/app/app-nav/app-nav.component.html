@@ -3,7 +3,7 @@
     #drawer
     class="sidenav"
     fixedInViewport="true"
-    [attr.role]="isHandset ? 'dialog' : 'navigation'"
+    [attr.role]="'navigation'"
     [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
     [opened]="!(isHandset | async)!.matches">
     <mat-toolbar color="primary">Menu</mat-toolbar>
@@ -23,8 +23,7 @@
         *ngIf="(isHandset | async)!.matches">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Huertos</span>
+      <span>Application Title</span>
     </mat-toolbar>
-    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
