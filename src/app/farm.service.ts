@@ -17,7 +17,6 @@ export class FarmService {
   constructor(private http: HttpClient) { }
 
   getFarms(): Observable<Farm[]>{
-    //return of(FARMS);
     return this.http.get<Farm[]>(this.farmsUrl)
   }
 
