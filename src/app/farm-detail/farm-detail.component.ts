@@ -53,6 +53,8 @@ export class FarmDetailComponent implements OnInit {
       itemChangeCallback: FarmDetailComponent.itemChange,
       
     };
+
+    this.zones = farm.zone_set;
   }
 
   static itemChange(item, itemComponent) {
