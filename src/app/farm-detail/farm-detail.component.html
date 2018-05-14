@@ -1,6 +1,9 @@
 <div *ngIf="farm">
   <mat-card >
-    <mat-card-title>{{farm.name}}</mat-card-title>
+    <div fxLayout="row">
+      <mat-card-title fxFill>{{farm.name}}</mat-card-title>
+      <mat-icon matListIcon>star_border</mat-icon>
+    </div>
     <mat-card-subtitle></mat-card-subtitle>
     <mat-card-content>
       <mat-list>
@@ -19,7 +22,7 @@
   </mat-card>
   <div id="farm-container">
     <gridster [options]="options">
-      <gridster-item [item]="item" *ngFor="let item of zones">
+      <gridster-item [item]="item" (mousedown)="showZoneDetails($event, item)" style="cursor: pointer;" *ngFor="let item of zones">
         <mat-card ></mat-card>
       </gridster-item>
     </gridster>

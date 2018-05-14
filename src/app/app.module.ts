@@ -4,6 +4,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { GridsterModule } from 'angular-gridster2';
 import { AppRoutingModule } from './/app-routing.module';
 import 'hammerjs';
+import {FlexLayoutModule} from '@angular/flex-layout';
+
 
 
 import { AppComponent } from './app.component';
@@ -29,6 +31,7 @@ import { AppNavComponent } from './app-nav/app-nav.component';
     GridsterModule,
     BrowserAnimationsModule,
     LayoutModule,
+    FlexLayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
