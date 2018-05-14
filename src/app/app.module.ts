@@ -6,6 +6,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import 'hammerjs';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { LeafletDrawModule } from '@asymmetrik/ngx-leaflet-draw';
 
 
 
@@ -39,7 +40,8 @@ import { AppNavComponent } from './app-nav/app-nav.component';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    LeafletModule.forRoot(),    
+    LeafletModule.forRoot(),  
+    LeafletDrawModule.forRoot(),    
   ],
   providers: [],
   bootstrap: [AppComponent]
