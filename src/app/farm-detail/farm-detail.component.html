@@ -1,9 +1,10 @@
 <div *ngIf="farm">
   <mat-card style="margin-bottom: 10px">
-    <div fxLayout="row">
-      <mat-card-title fxFill>{{farm.name}}</mat-card-title>
+    <mat-card-title fxLayout>
+      <span fxFill>{{farm.name}}</span>
       <mat-icon>star_border</mat-icon>
-    </div>
+    </mat-card-title>
+    <mat-card-subtitle>Fabio Rueda</mat-card-subtitle>
   </mat-card>
   <mat-card>
     <mat-card-content>
@@ -16,7 +17,7 @@
         <mat-list-item>
           <mat-icon matListIcon>list</mat-icon>
           <h3 matLine> Numero de especies</h3>
-          <p matLine> 7</p>              
+          <p matLine> {{zones.length}}</p>              
         </mat-list-item>
       </mat-list>
     </mat-card-content>
@@ -29,6 +30,6 @@
     </gridster>
   </div>
   <div *ngIf="zone">
-    <p>zoneee</p>
+    <p>zone {{zone.id}}</p>
   </div>
 </div>
