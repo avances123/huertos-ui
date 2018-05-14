@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { GridsterConfig, GridsterItem }  from 'angular-gridster2';
-import { Farm }         from '../farm';
+import { Farm, Zone }         from '../farm';
 import { FarmService }  from '../farm.service';
 
 @Component({
@@ -11,7 +11,8 @@ import { FarmService }  from '../farm.service';
   styleUrls: ['./farm-detail.component.css']
 })
 export class FarmDetailComponent implements OnInit {
-  @Input() farm: Farm;
+  farm: Farm;
+  zone: Zone;
   options: GridsterConfig;
   zones: Array<GridsterItem>;
 
@@ -55,6 +56,7 @@ export class FarmDetailComponent implements OnInit {
   }
 
   showZoneDetails($event, item) {
+    this.zone = item;
     console.info('Zone', item, $event);    
   }
     
