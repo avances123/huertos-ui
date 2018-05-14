@@ -22,6 +22,10 @@
       </mat-list>
     </mat-card-content>
   </mat-card>
+  <div style="height: 300px;"
+    leaflet 
+    [leafletOptions]="mapOptions">
+  </div>
   <div id="farm-container">
     <gridster [options]="options">
       <gridster-item [item]="item" (mousedown)="showZoneDetails($event, item)" style="cursor: pointer;" *ngFor="let item of zones">

@@ -4,6 +4,9 @@ import { Location } from '@angular/common';
 import { GridsterConfig, GridsterItem }  from 'angular-gridster2';
 import { Farm, Zone }         from '../farm';
 import { FarmService }  from '../farm.service';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { latLng, tileLayer } from 'leaflet';
+
 
 @Component({
   selector: 'app-farm-detail',
@@ -11,10 +14,16 @@ import { FarmService }  from '../farm.service';
   styleUrls: ['./farm-detail.component.css']
 })
 export class FarmDetailComponent implements OnInit {
+  mapOptions;  
   farm: Farm;
   zone: Zone;
   options: GridsterConfig;
   zones: Array<GridsterItem>;
+  
+
+  imports: [
+    LeafletModule
+  ]
 
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +33,13 @@ export class FarmDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFarm();
+    this.mapOptions = {
+      layers: [
+        tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
+      ],
+      zoom: 5,
+      center: latLng(46.879966, -121.726909)
+    };
   }
 
   getFarm(): void {
@@ -49,6 +65,8 @@ export class FarmDetailComponent implements OnInit {
     };
 
     this.zones = farm.zone_set;
+
+    
   }
 
   static itemChange(item, itemComponent) {

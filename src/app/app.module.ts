@@ -5,6 +5,7 @@ import { GridsterModule } from 'angular-gridster2';
 import { AppRoutingModule } from './/app-routing.module';
 import 'hammerjs';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 
 
@@ -38,6 +39,7 @@ import { AppNavComponent } from './app-nav/app-nav.component';
     MatIconModule,
     MatListModule,
     MatCardModule,
+    LeafletModule.forRoot(),    
   ],
   providers: [],
   bootstrap: [AppComponent]
