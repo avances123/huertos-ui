@@ -8,16 +8,15 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { LeafletDrawModule } from '@asymmetrik/ngx-leaflet-draw';
 
-
-
 import { AppComponent } from './app.component';
 import { FarmListComponent } from './farm-list/farm-list.component';
 import { GridsterCompact } from 'angular-gridster2/lib/gridsterCompact.service';
 import { FarmDetailComponent } from './farm-detail/farm-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCard, MatCardModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCard, MatCardModule, MatFormFieldModule,MatInputModule } from '@angular/material';
 import { AppNavComponent } from './app-nav/app-nav.component';
+import { AuthLoginComponent } from './auth-login/auth-login.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +24,7 @@ import { AppNavComponent } from './app-nav/app-nav.component';
     FarmListComponent,
     FarmDetailComponent,
     AppNavComponent,
+    AuthLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +40,8 @@ import { AppNavComponent } from './app-nav/app-nav.component';
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
     LeafletModule.forRoot(),  
     LeafletDrawModule.forRoot(),    
   ],
