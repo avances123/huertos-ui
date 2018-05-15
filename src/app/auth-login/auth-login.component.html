@@ -1,12 +1,10 @@
 <mat-card>
-  <form>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Username">
-    </mat-form-field>
-  
-    <mat-form-field class="example-full-width">
-      <input type="password" matInput placeholder="Password">
-    </mat-form-field>
-  </form>
-  <button mat-button>Login</button>
+  <mat-form-field class="example-full-width">
+    <input [(ngModel)]="username" matInput placeholder="Username">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input type="password" [(ngModel)]="password" matInput placeholder="Password">
+  </mat-form-field>
+  <button mat-button (mousedown)="sendForm()">Login</button>
 </mat-card>

@@ -7,6 +7,7 @@ import 'hammerjs';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { LeafletDrawModule } from '@asymmetrik/ngx-leaflet-draw';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppComponent } from './app.component';
 import { FarmListComponent } from './farm-list/farm-list.component';
@@ -28,6 +29,7 @@ import { AuthLoginComponent } from './auth-login/auth-login.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,    
     AppRoutingModule,
     HttpClientModule,
     GridsterModule,
