@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AuthService} from '../auth.service'
 
 @Component({
   selector: 'app-auth-login',
@@ -10,13 +11,13 @@ export class AuthLoginComponent implements OnInit {
   @Input() public username: string;
   @Input() public password: string;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
   sendForm(){
-    console.log(this.username,this.password)
+    this.authService.login(this.username,this.password).subscribe(token => console.log("Exito", token));
   }
 
 }

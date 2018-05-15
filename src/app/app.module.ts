@@ -8,7 +8,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { LeafletDrawModule } from '@asymmetrik/ngx-leaflet-draw';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-
+import { JwtModule } from '@auth0/angular-jwt';
 import { AppComponent } from './app.component';
 import { FarmListComponent } from './farm-list/farm-list.component';
 import { GridsterCompact } from 'angular-gridster2/lib/gridsterCompact.service';
@@ -18,6 +18,11 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCard, MatCardModule, MatFormFieldModule,MatInputModule } from '@angular/material';
 import { AppNavComponent } from './app-nav/app-nav.component';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
+
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 @NgModule({
   declarations: [
@@ -32,6 +37,13 @@ import { AuthLoginComponent } from './auth-login/auth-login.component';
     FormsModule,    
     AppRoutingModule,
     HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:3001'],
+        blacklistedRoutes: ['localhost:3001/auth/']
+      }
+    }),
     GridsterModule,
     BrowserAnimationsModule,
     LayoutModule,
