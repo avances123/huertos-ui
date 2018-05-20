@@ -22,6 +22,11 @@ export class AuthService {
     return this.http.post(this.loginUrl,{username: username,password:password});
   }
 
+  logout() {
+    // Remove auth data and update login status
+    localStorage.removeItem('access_token');
+  }
+
   register(username: string,password:string): Observable<Object>{
     console.log("haciendo register",this.loginUrl,username,password)
     return this.http.post(this.registerUrl,{username: username,password:password});

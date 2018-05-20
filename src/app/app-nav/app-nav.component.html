@@ -24,6 +24,7 @@
       </button>
       <span>Application Title</span>
       <a *ngIf="!authService.isLoggedIn" mat-icon-button routerLink="/login">login</a>
+      <a (click)="logout()" *ngIf="authService.isLoggedIn" routerLink="/" mat-icon-button>Log Out</a>
     </mat-toolbar>
     <div class="main-content">
       <router-outlet></router-outlet>
