@@ -17,7 +17,7 @@ export class AuthService {
   
   constructor(private http: HttpClient, public jwtHelper: JwtHelperService) { }
 
-  login(username: string,password:string): Observable<Object>{
+  login(username: string,password:string): Observable<any>{
     console.log("haciendo login",this.loginUrl,username,password)
     return this.http.post(this.loginUrl,{username: username,password:password});
   }
