@@ -42,8 +42,9 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:3001'],
-        blacklistedRoutes: ['localhost:3001/auth/']
+        whitelistedDomains: ['localhost:8000'],
+        blacklistedRoutes: [],
+        authScheme: 'JWT '
       }
     }),
     GridsterModule,

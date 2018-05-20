@@ -17,7 +17,10 @@ export class AuthLoginComponent implements OnInit {
   }
 
   sendForm(){
-    this.authService.login(this.username,this.password).subscribe(token => console.log("Exito", token));
+    this.authService.login(this.username,this.password).subscribe(token => {
+      console.log("Exito", token);
+      localStorage.setItem('access_token',token.token)
+    });
   }
 
 }
