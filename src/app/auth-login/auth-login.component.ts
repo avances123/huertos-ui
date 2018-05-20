@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AuthService} from '../auth.service'
+import { AuthService} from '../auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-auth-login',
@@ -11,15 +13,15 @@ export class AuthLoginComponent implements OnInit {
   @Input() public username: string;
   @Input() public password: string;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   sendForm(){
     this.authService.login(this.username,this.password).subscribe(token => {
       console.log("Exito", token);
       localStorage.setItem('access_token',token.token)
+      this.router.navigate(['/']);
     });
   }
 
