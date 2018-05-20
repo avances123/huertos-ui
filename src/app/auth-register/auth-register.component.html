@@ -1,0 +1,14 @@
+<mat-card fxLayout="column">
+  <mat-card-title>Register</mat-card-title>
+  <mat-form-field class="example-full-width">
+    <input [(ngModel)]="username" matInput placeholder="Username">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input type="password" [(ngModel)]="password1" matInput placeholder="Password">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input type="password" [(ngModel)]="password2" matInput placeholder="Repeat password">
+  </mat-form-field>
+  <button mat-button (mousedown)="sendForm()">Register</button>
+</mat-card>

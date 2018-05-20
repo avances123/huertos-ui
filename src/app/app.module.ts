@@ -18,6 +18,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCard, MatCardModule, MatFormFieldModule,MatInputModule } from '@angular/material';
 import { AppNavComponent } from './app-nav/app-nav.component';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
+import { AuthRegisterComponent } from './auth-register/auth-register.component';
 
 
 export function tokenGetter() {
@@ -31,6 +32,7 @@ export function tokenGetter() {
     FarmDetailComponent,
     AppNavComponent,
     AuthLoginComponent,
+    AuthRegisterComponent,
   ],
   imports: [
     BrowserModule,

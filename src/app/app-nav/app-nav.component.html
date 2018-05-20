@@ -7,7 +7,7 @@
     [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
     [opened]="!(isHandset | async)!.matches">
     <mat-toolbar color="primary">Menu</mat-toolbar>
-    <mat-nav-list>
+    <mat-nav-list fxLayout="column">
       <a mat-list-item routerLink="/farms" routerLinkActive="active">Farm list</a>
       <a mat-raised-button id="boton-nuevo-parque" routerLink="/new_farm" routerLinkActive="active">New farm</a>
     </mat-nav-list>
