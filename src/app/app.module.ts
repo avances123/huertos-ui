@@ -16,7 +16,7 @@ import { FarmDetailComponent } from './farm-detail/farm-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, 
-  MatCard, MatCardModule, MatFormFieldModule,MatInputModule, MatTabsModule } from '@angular/material';
+  MatCard, MatCardModule, MatFormFieldModule,MatInputModule, MatTabsModule, MatGridListModule, MatGridList } from '@angular/material';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
 
 
@@ -59,6 +59,7 @@ export function tokenGetter() {
     LeafletModule.forRoot(),
     LeafletDrawModule.forRoot(),
     MatTabsModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,10 @@
-#farm-container {
-  height: 400px;
+.main {
+  height: calc(100vh - 64px);
 }
 
+.zonas{
+  height: 90%;
+}
 
 gridster-item mat-card {
     width: 100%;

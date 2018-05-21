@@ -1,40 +1,39 @@
-<div *ngIf="farm">
-  <mat-card style="margin-bottom: 10px">
-    <mat-card-title fxLayout>
-      <span fxFill>{{farm.name}}</span>
-      <mat-icon>star_border</mat-icon>
-    </mat-card-title>
-    <mat-card-subtitle>Fabio Rueda</mat-card-subtitle>
-  </mat-card>
-  <mat-card>
-    <mat-card-content>
-      <mat-list>
-        <mat-list-item>
-          <mat-icon matListIcon>archive</mat-icon>
-          <h3 matLine> Cantidad cosechada</h3>
-          <p matLine> 24.5 Kg</p>              
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListIcon>list</mat-icon>
-          <h3 matLine> Numero de especies</h3>
-          <p matLine> {{zones.length}}</p>              
-        </mat-list-item>
-      </mat-list>
-    </mat-card-content>
-  </mat-card>
-  <div style="height: 400px;"
-    leaflet
-    leafletDraw
-    [leafletOptions]="mapOptions">
+<div *ngIf="farm" fxLayout="column" class="main">
+  <div fxLayout="row">
+    <mat-card style="margin: 10px" fxFlex>
+      <mat-card-title fxLayout>
+        <span fxFill>{{farm.name}}</span>
+      </mat-card-title>
+      <mat-card-subtitle>Fabio Rueda</mat-card-subtitle>
+    </mat-card>
   </div>
-  <div id="farm-container">
-    <gridster [options]="options">
+
+  <div fxLayout="row">
+    <mat-card style="margin: 10px" fxFlex>
+      <mat-card-title>Data</mat-card-title>
+    </mat-card>
+
+    <mat-card style="margin: 10px" fxFlex>
+      <mat-card-title>Location</mat-card-title>
+      <div style="height: 400px;"
+        leaflet
+        leafletDraw
+        [leafletOptions]="mapOptions">
+      </div>
+    </mat-card>
+  </div>
+
+
+  <div fxLayout="row" fxFlex>
+    <mat-card style="margin: 10px" fxFlex>
+    <mat-card-title>Farm map</mat-card-title>
+    <gridster class="zonas" [options]="options">
       <gridster-item [item]="item" (mousedown)="showZoneDetails($event, item)" style="cursor: pointer;" *ngFor="let item of zones">
         <mat-card ></mat-card>
       </gridster-item>
     </gridster>
+    </mat-card>
   </div>
-  <div *ngIf="zone">
-    <p>zone {{zone.id}}</p>
-  </div>
+
+  
 </div>
