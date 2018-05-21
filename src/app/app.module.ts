@@ -15,7 +15,8 @@ import { GridsterCompact } from 'angular-gridster2/lib/gridsterCompact.service';
 import { FarmDetailComponent } from './farm-detail/farm-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCard, MatCardModule, MatFormFieldModule,MatInputModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, 
+  MatCard, MatCardModule, MatFormFieldModule,MatInputModule, MatTabsModule } from '@angular/material';
 import { AppNavComponent } from './app-nav/app-nav.component';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { AuthRegisterComponent } from './auth-register/auth-register.component';
@@ -60,7 +61,8 @@ export function tokenGetter() {
     MatFormFieldModule,
     MatInputModule,
     LeafletModule.forRoot(),  
-    LeafletDrawModule.forRoot(),    
+    LeafletDrawModule.forRoot(),
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
