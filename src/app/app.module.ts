@@ -19,7 +19,6 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
   MatCard, MatCardModule, MatFormFieldModule,MatInputModule, MatTabsModule } from '@angular/material';
 import { AppNavComponent } from './app-nav/app-nav.component';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
-import { AuthRegisterComponent } from './auth-register/auth-register.component';
 
 
 export function tokenGetter() {
@@ -33,11 +32,10 @@ export function tokenGetter() {
     FarmDetailComponent,
     AppNavComponent,
     AuthLoginComponent,
-    AuthRegisterComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,    
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     JwtModule.forRoot({
@@ -60,7 +58,7 @@ export function tokenGetter() {
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    LeafletModule.forRoot(),  
+    LeafletModule.forRoot(),
     LeafletDrawModule.forRoot(),
     MatTabsModule,
   ],

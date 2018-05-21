@@ -1,10 +1,9 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { FarmDetailComponent }   from './farm-detail/farm-detail.component';
 import { FarmListComponent }   from './farm-list/farm-list.component';
 import { AuthLoginComponent } from './auth-login/auth-login.component'
-import { AuthRegisterComponent } from './auth-register/auth-register.component'
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
@@ -12,11 +11,10 @@ const routes: Routes = [
   { path: 'farms', component: FarmListComponent },
   { path: 'farm/:id', component: FarmDetailComponent, canActivate: [AuthGuard] },
   { path: 'login', component: AuthLoginComponent },
-  { path: 'register', component: AuthRegisterComponent },
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],  
+  imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ],
   providers: [AuthGuard],
 })

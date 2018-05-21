@@ -14,7 +14,7 @@
             <mat-form-field class="example-full-width">
               <input type="password" [(ngModel)]="password" matInput placeholder="Password">
             </mat-form-field>
-            <button mat-raised-button color="primary" (mousedown)="sendForm()">Login</button>
+            <button mat-raised-button color="primary" (mousedown)="sendLoginForm()">Login</button>
           </div>
         </mat-tab>
 
@@ -27,12 +27,12 @@
               <input [(ngModel)]="username" matInput placeholder="Username">
             </mat-form-field>
             <mat-form-field class="example-full-width">
-              <input type="password" [(ngModel)]="password1" matInput placeholder="Password">
+              <input type="password" [(ngModel)]="password" matInput placeholder="Password">
             </mat-form-field>
             <mat-form-field class="example-full-width">
-              <input type="password" [(ngModel)]="password2" matInput placeholder="Repeat password">
+              <input type="password" [(ngModel)]="repassword" matInput placeholder="Repeat password">
             </mat-form-field>
-            <button mat-raised-button color="primary" (mousedown)="sendForm()">Register</button>
+            <button mat-raised-button color="primary" (mousedown)="sendRegisterForm()">Register</button>
           </div>
         </mat-tab>
 
