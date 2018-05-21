@@ -19,11 +19,15 @@ export class FarmDetailComponent implements OnInit {
   zone: Zone;
   options: GridsterConfig;
   zones: Array<GridsterItem>;
-  
-
   imports: [
     LeafletModule
-  ]
+  ];
+
+  static itemChange(item, itemComponent) {
+    console.info('itemChanged', item, itemComponent);
+  }
+
+
 
   constructor(
     private route: ActivatedRoute,
@@ -37,7 +41,7 @@ export class FarmDetailComponent implements OnInit {
       layers: [
         tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
       ],
-      zoom: 5,
+      zoom: 2,
       center: latLng(46.879966, -121.726909)
     };
   }
@@ -45,7 +49,6 @@ export class FarmDetailComponent implements OnInit {
   getFarm(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.farmService.getFarm(id)
-      //.subscribe(this.initGridster);
       .subscribe(farm => this.initGridster(farm));
   }
 
@@ -54,29 +57,22 @@ export class FarmDetailComponent implements OnInit {
     this.farm = farm;
     this.options = {
       draggable: {
-        enabled: false
+        enabled: true
       },
       resizable: {
-        enabled: false
+        enabled: true
       },
 
       itemChangeCallback: FarmDetailComponent.itemChange,
-      
     };
 
     this.zones = farm.zone_set;
-
-    
   }
 
-  static itemChange(item, itemComponent) {
-    console.info('itemChanged', item, itemComponent);
-  }
 
   showZoneDetails($event, item) {
     this.zone = item;
     console.info('Zone', item, $event);    
   }
-    
 
 }

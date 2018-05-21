@@ -13,7 +13,7 @@
       <mat-card-title>Data</mat-card-title>
     </mat-card>
 
-    <mat-card style="margin: 10px" fxFlex>
+    <mat-card style="margin: 10px" fxFlex="30">
       <mat-card-title>Location</mat-card-title>
       <div style="height: 400px;"
         leaflet
@@ -26,12 +26,15 @@
 
   <div fxLayout="row" fxFlex>
     <mat-card style="margin: 10px" fxFlex>
-    <mat-card-title>Farm map</mat-card-title>
-    <gridster class="zonas" [options]="options">
-      <gridster-item [item]="item" (mousedown)="showZoneDetails($event, item)"  *ngFor="let item of zones">
-        <mat-card [style.background-color]="item.especies.color">{{item.especies.color}}</mat-card>
-      </gridster-item>
-    </gridster>
+      <mat-card-title>Farm map</mat-card-title>
+      <gridster class="zonas" [options]="options">
+        <gridster-item [item]="item" (mousedown)="showZoneDetails($event, item)"  *ngFor="let item of zones">
+          <mat-card [style.background-color]="item.especies.color">{{item.especies.name}}</mat-card>
+        </gridster-item>
+      </gridster>
+      <mat-card-actions>
+          <button style="margin-left: 15px" mat-raised-button color="primary">Edit zones</button>
+      </mat-card-actions>
     </mat-card>
   </div>
 
