@@ -1,2 +1,28 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<app-nav></app-nav>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a mat-icon-button class="login-icon" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </a>
+    <span>Farms</span>
+    <span fxFlex></span>
+    <a mat-icon-button *ngIf="!authService.isLoggedIn"  routerLink="/login" class="login-icon">
+        <mat-icon >account_box</mat-icon>
+    </a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav fixedInViewport [(opened)]="opened" mode="over">
+        <mat-nav-list>
+            <mat-list-item>
+                
+                <a matLine  *ngIf="!authService.isLoggedIn"  routerLink="/farms" fxLayout fxLayoutAlign="start center"> 
+                    <mat-icon class="list-icon" matListIcon>list</mat-icon>
+                    <span>Farms</span>
+                </a>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fullscreen>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
