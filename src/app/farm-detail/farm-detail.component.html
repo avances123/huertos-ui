@@ -28,8 +28,8 @@
     <mat-card style="margin: 10px" fxFlex>
     <mat-card-title>Farm map</mat-card-title>
     <gridster class="zonas" [options]="options">
-      <gridster-item [item]="item" (mousedown)="showZoneDetails($event, item)" style="cursor: pointer;" *ngFor="let item of zones">
-        <mat-card ></mat-card>
+      <gridster-item [item]="item" (mousedown)="showZoneDetails($event, item)"  *ngFor="let item of zones">
+        <mat-card [style.background-color]="item.especies.color">{{item.especies.color}}</mat-card>
       </gridster-item>
     </gridster>
     </mat-card>

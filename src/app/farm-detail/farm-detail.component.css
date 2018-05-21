@@ -6,6 +6,10 @@
   height: 90%;
 }
 
+gridster-item {
+  cursor: pointer;
+}
+
 gridster-item mat-card {
     width: 100%;
     height: 100%;
