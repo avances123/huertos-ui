@@ -5,17 +5,20 @@
       <div class="columns">
         <div class="column is-half is-offset-one-quarter">
 
-          <div class="tabs is-toggle is-fullwidth">
+          <!-- Las tabs -->
+          <div class="tabs is-toggle is-medium is-fullwidth">
             <ul>
-              <li class="is-active">
-                <a>Login</a>
+              <li [ngClass]="tab_activa === 'login' ? 'is-active' : ''">
+                <a (click)="tab_activa='login'">Login</a>
               </li>
-              <li>
-                <a>Register</a>
+              <li [ngClass]="tab_activa === 'register' ? 'is-active' : ''">
+                <a (click)="tab_activa='register'">Register</a>
               </li>
             </ul>
           </div>
-          <div class="box">
+
+          <!-- La caja de login -->
+          <div *ngIf="tab_activa=='login'" class="box">
             <div class="field">
               <label class="label">Username</label>
               <div class="control has-icons-left has-icons-right">
@@ -34,10 +37,45 @@
                 </span>
               </div>
             </div>
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-link" (mousedown)="sendLoginForm()">Submit</button>
+              </div>
+            </div>
+          </div>
 
+          <!-- La caja de register -->
+          <div *ngIf="tab_activa=='register'" class="box">
+            <div class="field">
+              <label class="label">Username</label>
+              <div class="control has-icons-left has-icons-right">
+                <input class="input" type="text" placeholder="" value="" [(ngModel)]="username">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control has-icons-left has-icons-right">
+                <input class="input" type="password" placeholder="" value="" [(ngModel)]="password">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-key"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Repeat password</label>
+              <div class="control has-icons-left has-icons-right">
+                <input class="input" type="password" placeholder="" value="" [(ngModel)]="repassword">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-key"></i>
+                </span>
+              </div>
+            </div>
             <div class="field">
               <div class="control">
-                <button class="button is-link" (mousedown)="sendLoginForm()">Login</button>
+                <button class="button is-link" (mousedown)="sendRegisterForm()">Register</button>
               </div>
             </div>
           </div>

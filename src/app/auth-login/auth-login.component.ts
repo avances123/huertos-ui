@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AuthLoginComponent implements OnInit {
 
+  public tab_activa = 'login';
   @Input() public username: string;
   @Input() public password: string;
   @Input() public repassword: string;
