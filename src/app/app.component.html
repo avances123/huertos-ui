@@ -1,30 +1,14 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <a mat-icon-button *ngIf="authService.isLoggedIn" class="login-icon" (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-    </a>
-    <span>Farms</span>
-    <span fxFlex></span>
-    <a mat-icon-button *ngIf="!authService.isLoggedIn"  routerLink="/login" class="login-icon">
-        <mat-icon >account_box</mat-icon>
-    </a>
-    <a mat-icon-button *ngIf="authService.isLoggedIn"  (click)="logout()" class="login-icon">
-        <mat-icon >exit_to_app</mat-icon>
-    </a>
-  </mat-toolbar-row>
-</mat-toolbar>
-<mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav fixedInViewport [(opened)]="opened" mode="over">
-        <mat-nav-list>
-            <mat-list-item>
-                <a matLine  *ngIf="authService.isLoggedIn" (click)="sidenav.close()" routerLink="/farms" fxLayout fxLayoutAlign="start center"> 
-                    <mat-icon class="list-icon" matListIcon>list</mat-icon>
-                    <span>Farms</span>
-                </a>
-            </mat-list-item>
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content fullscreen>
-        <router-outlet></router-outlet>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" *ngIf="authService.isLoggedIn"   routerLink="/farms">Farms</a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" *ngIf="!authService.isLoggedIn"  routerLink="/login">Login</a>
+            <a class="navbar-item" *ngIf="authService.isLoggedIn"  (click)="logout()">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
