@@ -57,10 +57,10 @@ export class FarmDetailComponent implements OnInit {
     this.farm = farm;
     this.options = {
       draggable: {
-        enabled: true
+        enabled: false
       },
       resizable: {
-        enabled: true
+        enabled: false
       },
 
       itemChangeCallback: FarmDetailComponent.itemChange,

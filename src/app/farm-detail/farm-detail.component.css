@@ -1,16 +1,27 @@
-.main {
-  height: calc(100vh - 64px);
+.first-bar{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 2rem;
+}
+.datos{
+  height: 300px;
+}
+
+.mapa{
+  height: 300px;
+  padding: 5px;
 }
 
 .zonas{
-  height: 85%;
+  padding: 5px;
+  height: 300px;
 }
 
 gridster-item {
   cursor: pointer;
 }
 
-gridster-item mat-card {
+gridster-item .zone {
     width: 100%;
     height: 100%;
     display: flex;

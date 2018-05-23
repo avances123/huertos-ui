@@ -1,44 +1,57 @@
-<div *ngIf="farm" fxLayout="column" class="main">
-  <div fxLayout="row">
-    <mat-card style="margin: 10px" fxFlex>
-      <mat-card-title fxLayout>
-        <span fxFill>{{farm.name}}</span>
-      </mat-card-title>
-      <mat-card-subtitle>Fabio Rueda</mat-card-subtitle>
-    </mat-card>
+<div *ngIf="farm">
+
+  <section class="first-bar">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <p class="title">{{farm.name}}</p>
+        </div>
+
+        <div class="column is-narrow">
+          <div class="buttons">
+          <a class="button is-info">Water</a>
+          <a class="button is-primary">Zone distribution</a>
+        </div>
+        </div>
+      </div>
+
+      </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-three-quarters">
+          <div class="box zonas">
+            <gridster class="" [options]="options">
+              <gridster-item [item]="item" (mousedown)="showZoneDetails($event, item)" *ngFor="let item of zones">
+                <div class="zone" [style.background-color]="item.especies.color">{{item.especies.name}}</div>
+              </gridster-item>
+            </gridster>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box mapa">
+            <div style="height: 290px;" leaflet [leafletOptions]="mapOptions"></div>
+            <!-- <div style="height: 300px;" leaflet leafletDraw [leafletOptions]="mapOptions"></div> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+
+    </div>
+  </section>
+
   </div>
-
-  <div fxLayout="row">
-    <mat-card style="margin: 10px" fxFlex>
-      <mat-card-title>Data</mat-card-title>
-    </mat-card>
-
-    <mat-card style="margin: 10px" fxFlex="30">
-      <mat-card-title>Weather</mat-card-title>
-      <!-- <div style="height: 400px;"
-        leaflet
-        leafletDraw
-        [leafletOptions]="mapOptions">
-      </div> -->
-      <iframe width="100%" height="400" src="https://embed.windy.com/embed2.html?lat=44.528&lon=11.382&zoom=5&level=surface&overlay=rain&menu=&message=true&marker=&calendar=12&pressure=&type=map&location=coordinates&detail=&detailLat=47.267&detailLon=11.400&metricWind=default&metricTemp=default" frameborder="0"></iframe>
-    </mat-card>
-  </div>
-
-
-  <div fxLayout="row" fxFlex>
-    <mat-card style="margin: 10px" fxFlex>
-      <mat-card-title>Farm map</mat-card-title>
-      <gridster class="zonas" [options]="options">
-        <gridster-item [item]="item" (mousedown)="showZoneDetails($event, item)"  *ngFor="let item of zones">
-          <mat-card [style.background-color]="item.especies.color">{{item.especies.name}}</mat-card>
-        </gridster-item>
-      </gridster>
-      <mat-card-actions>
-          <button style="margin-left: 15px" mat-raised-button color="primary">Edit zones</button>
-          <button mat-raised-button color="primary">Add new zone</button>          
-      </mat-card-actions>
-    </mat-card>
-  </div>
-
-  
-</div>
