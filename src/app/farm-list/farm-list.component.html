@@ -1,6 +1,45 @@
-<mat-nav-list>
-    <mat-list-item *ngFor="let farm of farms">
-            <a matLine routerLink="/farm/{{farm.id}}">{{farm.name}}</a>
-    </mat-list-item>
-  </mat-nav-list>
- 
+<section class="section">
+  <div class="container">
+    <article class="media" *ngFor="let farm of farms">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <img src="https://bulma.io/images/placeholders/128x128.png">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>{{farm.name}}</strong>
+            <!-- <small>@johnsmith</small> -->
+          </p>
+        </div>
+        <nav class="level is-mobile">
+          <div class="level-left">
+            <a class="level-item">
+              <span class="icon is-small">
+                <i class="fas fa-reply"></i>
+              </span>
+            </a>
+            <a class="level-item">
+              <span class="icon is-small">
+                <i class="fas fa-retweet"></i>
+              </span>
+            </a>
+            <a class="level-item">
+              <span class="icon is-small">
+                <i class="fas fa-heart"></i>
+              </span>
+            </a>
+          </div>
+        </nav>
+      </div>
+      <div class="media-right">
+        <a class="button" routerLink="/farm/{{farm.id}}">
+          <span class="icon is-small">
+            <i class="fas fa-greater-than"></i>
+          </span>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>

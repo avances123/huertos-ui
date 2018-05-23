@@ -1,7 +1,3 @@
-.form {
-    margin-top: 10px;
-}
-
-.main {
-    height: calc(100vh - 64px);
+.restar-navbar {
+    min-height: calc(100vh - 52px)
 }

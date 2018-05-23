@@ -1,41 +1,87 @@
+<section class="hero is-fullheight restar-navbar">
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
 
-
-<div class="main" fxLayout="column">
-  <div fxLayout="row" fxFlexOffset="15">
-    <mat-card fxFlex="50" fxFlexOffset="25">
-      <mat-tab-group>
-
-        <mat-tab label="Sign in">
-          <div fxLayout="column" class="form">
-            <mat-form-field class="example-full-width">
-              <input [(ngModel)]="username" matInput placeholder="Username">
-            </mat-form-field>
-          
-            <mat-form-field class="example-full-width">
-              <input type="password" [(ngModel)]="password" matInput placeholder="Password">
-            </mat-form-field>
-            <button mat-raised-button color="primary" (mousedown)="sendLoginForm()">Login</button>
+          <!-- Las tabs -->
+          <div class="tabs is-toggle is-medium is-fullwidth">
+            <ul>
+              <li [ngClass]="tab_activa === 'login' ? 'is-active' : ''">
+                <a (click)="tab_activa='login'">Login</a>
+              </li>
+              <li [ngClass]="tab_activa === 'register' ? 'is-active' : ''">
+                <a (click)="tab_activa='register'">Register</a>
+              </li>
+            </ul>
           </div>
-        </mat-tab>
 
-
-        <mat-tab label="Sign up">
-          <div fxLayout="column" class="form">
-            <mat-form-field class="example-full-width">
-              <input [(ngModel)]="username" matInput placeholder="Username">
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <input type="password" [(ngModel)]="password" matInput placeholder="Password">
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <input type="password" [(ngModel)]="repassword" matInput placeholder="Repeat password">
-            </mat-form-field>
-            <button mat-raised-button color="primary" (mousedown)="sendRegisterForm()">Register</button>
+          <!-- La caja de login -->
+          <div *ngIf="tab_activa=='login'" class="box">
+            <div class="field">
+              <label class="label">Username</label>
+              <div class="control has-icons-left has-icons-right">
+                <input class="input" type="text" placeholder="" value="" [(ngModel)]="username">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control has-icons-left has-icons-right">
+                <input class="input" type="password" placeholder="" value="" [(ngModel)]="password">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-key"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-link" (mousedown)="sendLoginForm()">Submit</button>
+              </div>
+            </div>
           </div>
-        </mat-tab>
 
-
-      </mat-tab-group>
-    </mat-card>
+          <!-- La caja de register -->
+          <div *ngIf="tab_activa=='register'" class="box">
+            <div class="field">
+              <label class="label">Username</label>
+              <div class="control has-icons-left has-icons-right">
+                <input class="input" type="text" placeholder="" value="" [(ngModel)]="username">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control has-icons-left has-icons-right">
+                <input class="input" type="password" placeholder="" value="" [(ngModel)]="password">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-key"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Repeat password</label>
+              <div class="control has-icons-left has-icons-right">
+                <input class="input" type="password" placeholder="" value="" [(ngModel)]="repassword">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-key"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <button class="button is-link" (mousedown)="sendRegisterForm()">Register</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
+</section>
