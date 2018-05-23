@@ -5,7 +5,7 @@ import { GridsterConfig, GridsterItem }  from 'angular-gridster2';
 import { Farm, Zone }         from '../farm';
 import { FarmService }  from '../farm.service';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { latLng, tileLayer } from 'leaflet';
+import { latLng, tileLayer, geoJSON, Layer } from 'leaflet';
 
 
 @Component({
@@ -14,7 +14,10 @@ import { latLng, tileLayer } from 'leaflet';
   styleUrls: ['./farm-detail.component.css']
 })
 export class FarmDetailComponent implements OnInit {
-  mapOptions;  
+  mapOptions;
+  farmLayer;
+  layers = []; 
+  fitBounds = [];
   farm: Farm;
   zone: Zone;
   options: GridsterConfig;
@@ -39,10 +42,10 @@ export class FarmDetailComponent implements OnInit {
     this.getFarm();
     this.mapOptions = {
       layers: [
-        tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
+        tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 18, attribution: '...' })
       ],
-      zoom: 2,
-      center: latLng(46.879966, -121.726909)
+      zoom: 12,
+      center: latLng(43,1)
     };
   }
 
@@ -53,8 +56,13 @@ export class FarmDetailComponent implements OnInit {
   }
 
   initGridster(farm): void {
-    console.debug("Nuevo farm", farm)
+    console.log("Nuevo farm", farm)
     this.farm = farm;
+    this.zones = farm.zone_set;    
+    this.farmLayer = geoJSON((farm.mpoly) as any,{ style: () => ({ color: '#ff7800' })});
+    this.layers.push(this.farmLayer);
+    this.fitBounds = this.farmLayer.getBounds();
+
     this.options = {
       draggable: {
         enabled: false
@@ -66,7 +74,6 @@ export class FarmDetailComponent implements OnInit {
       itemChangeCallback: FarmDetailComponent.itemChange,
     };
 
-    this.zones = farm.zone_set;
   }
 
 
