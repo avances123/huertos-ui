@@ -14,6 +14,7 @@ import { latLng, tileLayer, geoJSON, Layer } from 'leaflet';
   styleUrls: ['./farm-detail.component.css']
 })
 export class FarmDetailComponent implements OnInit {
+  water_modal_active : boolean = false;
   mapOptions;
   farmLayer;
   layers = []; 

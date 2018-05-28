@@ -9,7 +9,7 @@
 
         <div class="column is-narrow">
           <div class="buttons">
-            <a class="button is-info">Add water</a>
+            <a class="button is-info" (click)="water_modal_active=true">Add water</a>
             <a class="button">Edit zones</a>
           </div>
         </div>
@@ -32,11 +32,7 @@
         </div>
         <div class="column">
           <div class="box mapa">
-            <div style="height: 290px;" 
-              leaflet 
-              [leafletOptions]="mapOptions" 
-              [leafletLayers]="layers"
-              [leafletFitBounds]="fitBounds"></div>
+            <div style="height: 290px;" leaflet [leafletOptions]="mapOptions" [leafletLayers]="layers" [leafletFitBounds]="fitBounds"></div>
             <!-- <div style="height: 300px;" leaflet leafletDraw [leafletOptions]="mapOptions"></div> -->
 
           </div>
@@ -60,4 +56,22 @@
     </div>
   </section>
 
+
+
+  <div class="modal" [ngClass]="{'is-active': water_modal_active}"  >
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Modal title</p>
+        <button class="delete" aria-label="close" (click)="water_modal_active=false"></button>
+      </header>
+      <section class="modal-card-body">
+        <!-- Content ... -->
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Save changes</button>
+        <button class="button">Cancel</button>
+      </footer>
+    </div>
+  </div>
 </div>

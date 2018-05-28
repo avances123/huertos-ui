@@ -17,8 +17,10 @@
   height: 300px;
 }
 
+
 gridster{
-  background-color: rgba(191, 127, 63, 0.33);
+  background-color: rgba(191, 127, 63, 0.03);
+  
 }
 
 gridster-item {
