@@ -1,3 +1,23 @@
 .restar-navbar {
     min-height: calc(100vh - 52px)
 }
+
+.tabs {
+    margin-bottom: 0;
+    background-color: white;
+    
+}
+
+.tabs li a{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;   
+    border-color: grey;
+    border-style: none;
+}
+
+
+
+.box {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}

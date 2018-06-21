@@ -3,6 +3,18 @@ html {
     overflow-y: auto;
 }
 
+body {
+    background: url('assets/background.jpg') no-repeat 50% 50% fixed;
+        
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+
+}
+
+
+
 .modal {
     z-index: 1500;
 }

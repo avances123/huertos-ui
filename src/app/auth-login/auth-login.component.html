@@ -9,10 +9,10 @@
           <div class="tabs is-toggle is-medium is-fullwidth">
             <ul>
               <li [ngClass]="tab_activa === 'login' ? 'is-active' : ''">
-                <a (click)="tab_activa='login'">Login</a>
+                <a class="tab_login" (click)="tab_activa='login'">Login</a>
               </li>
               <li [ngClass]="tab_activa === 'register' ? 'is-active' : ''">
-                <a (click)="tab_activa='register'">Register</a>
+                <a class="tab_register" (click)="tab_activa='register'">Register</a>
               </li>
             </ul>
           </div>
